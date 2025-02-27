@@ -7,8 +7,7 @@ import '../viewModel/payment_view_model.dart';
 
 
 class PaymentIntegrationView extends StatefulWidget {
-  final String accountType; // Pass the price to the screen
-  const PaymentIntegrationView({super.key, required this.accountType});
+  const PaymentIntegrationView({super.key,});
   @override
   _PaymentIntegrationViewState createState() => _PaymentIntegrationViewState();
 }
