@@ -11,7 +11,7 @@ class PaymentViewModel with ChangeNotifier{
   Future<void> processPayment(WebViewController controller)async{
 
     try{
-      await _repo.initiatePayment(controller: controller, price: "10");
+      await _repo.initiatePayment(controller: controller, price: "5");
     }catch(e){
       log(e.toString());
     }

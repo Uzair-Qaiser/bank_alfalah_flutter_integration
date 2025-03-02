@@ -13,7 +13,7 @@ class PaymentRepo {
   final String _storeId = 'Your store id';
   final String _returnUrl = 'Your return url';
   final String _merchantHash = 'Your Merchant hash ';
-  final String _merchantPass = 'Your Merchant pass] ';
+  final String _merchantPass = 'Your Merchant pass ';
   final String _merchantUserName= 'Your Merchant username ';
   String? _requestVerificationToken;
 
@@ -80,6 +80,8 @@ class PaymentRepo {
   }
 
   void _loadWebView(Map<String, dynamic> responseData, Map<String, String> prevData,WebViewController controller,String price) {
+    print("response data $responseData");
+    print("prev data $prevData");
     final newData = {
       'AuthToken': responseData['AuthToken'].toString(),
       'RequestHash': '',
@@ -95,6 +97,7 @@ class PaymentRepo {
       'TransactionTypeId': '',
       'TransactionReferenceNumber': prevData['HS_TransactionReferenceNumber'],
       'TransactionAmount': price,
+      "pp_BillReference": "TXN${DateTime.now().millisecondsSinceEpoch}"
     };
 
     final requestHash = _getHashString(newData);
